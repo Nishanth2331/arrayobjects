@@ -1,0 +1,60 @@
+const req = new XMLHttpRequest();
+req.addEventListener("load", reqListener);
+req.open("GET", "https://restcountries.com/v3.1/all"
+);
+req.send();
+    //Normal Function
+        function reqListener() {
+            let country=JSON.parse(this.responseText);
+            console.log(country);
+
+
+    // for
+       for(i=0;i<country.length;i++){
+         console.log(country[i].name.common)
+     }
+
+
+    //for in
+     for(let i in country){
+         console.log(country[i].name.official)
+     }
+
+
+    // for of
+     for(i of country){
+         console.log(i.name.common)
+     }
+
+
+    
+    // forEach with Arrow
+       country.forEach((e)=>{
+         console.log(e.name.common)
+     })
+   
+    //forEach with normal Function
+    country.forEach(function getValue(e){
+        console.log(e.name.official)
+    })
+
+
+
+
+
+{
+    name: "Nishanth",
+    degree:"BE",
+    mail_id:"nishanth10187@gmail.com",
+    skills:["HTML","CSS","javaScript","python"],
+    age:"23",
+    address:{
+        street:"abc street",
+        place:"chennai",
+        country:"India"
+    },
+    hobbies:["cricket","books","traveling"],
+    volunteer:["NSS","fresherAssociation","RotaractClub"],
+    Languages:["Tamil","English"]
+}
+
